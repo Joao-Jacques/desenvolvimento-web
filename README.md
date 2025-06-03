@@ -6,13 +6,12 @@ Este projeto é um site simples para um minimercado fictício, desenvolvido como
 
 ```
 desenvolvimento-web/
-  app/
-    alimentos.html
-    bebidas.html
-    contato.html
-    higiene.html
-    index.html
-    servicos.html
+  alimentos.html
+  bebidas.html
+  contato.html
+  higiene.html
+  index.html
+  servicos.html
   assets/
     agua.png
     arroz.png
