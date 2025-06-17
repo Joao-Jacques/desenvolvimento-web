@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Higiene - Minimercado PUCRS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,6 +23,7 @@
                 <li><a href="higiene.html">Higiene</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
         </nav>
         <hr>
@@ -29,45 +32,62 @@
     <!-- CORPO PRINCIPAL -->
     <main>
         <section>
-            <h2>Categoria: Higiene</h2>
-            <p>Produtos de higiene pessoal e limpeza para seu bem-estar e cuidado.</p>
-        </section>
-
-        <section>
-            <article>
-                <h3>Sabonete Dove 90g</h3>
-                <img src="assets/sabonete.png" alt="Sabonete Dove 90g" width="150" height="150">
-                <p><strong>Descrição:</strong> Sabonete em barra Dove original, 90g. Hidratante com 1/4 de creme
-                    hidratante. Deixa a pele macia e perfumada.</p>
-                <p><strong>Valor:</strong> R$ 3,50</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
-
-            <article>
-                <h3>Shampoo Seda 325ml</h3>
-                <img src="assets/shampoo.png" alt="Shampoo Seda 325ml" width="150" height="150">
-                <p><strong>Descrição:</strong> Shampoo Seda Reconstrução, 325ml. Para cabelos danificados. Fórmula com
-                    queratina líquida.</p>
-                <p><strong>Valor:</strong> R$ 12,90</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
-
-            <article>
-                <h3>Pasta de Dente Colgate 90g</h3>
-                <img src="assets/pasta.png" alt="Pasta de Dente Colgate 90g" width="150" height="150">
-                <p><strong>Descrição:</strong> Creme dental Colgate Total 12, 90g. Proteção completa por 12 horas.</p>
-                <p><strong>Valor:</strong> R$ 4,20</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
-
-            <article>
-                <h3>Desodorante Rexona 150ml</h3>
-                <img src="assets/desodorante.png" alt="Desodorante Rexona 150ml" width="150" height="150">
-                <p><strong>Descrição:</strong> Desodorante aerosol Rexona Men, 150ml. Proteção 48h contra suor e odor.
-                </p>
-                <p><strong>Valor:</strong> R$ 8,90</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
+            <h2>Higiene</h2>
+            <div class="produtos-grid">
+                <div class="card-produto">
+                    <img src="assets/sabonete.png" alt="Sabonete Dove 90g">
+                    <h3>Sabonete Dove 90g</h3>
+                    <p class="descricao-produto">Sabonete hidratante com 1/4 de creme, deixa a pele macia e suave.</p>
+                    <div class="valor">R$ 3,50</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-sabonete" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-sabonete" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Sabonete Dove 90g" data-preco="3.50">Adicionar ao
+                        carrinho
+                    </button>
+                </div>
+                <div class="card-produto">
+                    <img src="assets/shampoo.png" alt="Shampoo Seda 325ml">
+                    <h3>Shampoo Seda 325ml</h3>
+                    <p class="descricao-produto">Shampoo para cabelos danificados, proporciona brilho e maciez.</p>
+                    <div class="valor">R$ 12,90</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-shampoo" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-shampoo" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Shampoo Seda 325ml" data-preco="12.90">Adicionar ao
+                        carrinho
+                    </button>
+                </div>
+                <div class="card-produto">
+                    <img src="assets/pasta.png" alt="Pasta de Dente Colgate 90g">
+                    <h3>Pasta de Dente Colgate 90g</h3>
+                    <p class="descricao-produto">Creme dental Colgate Total 12, proteção completa para sua saúde bucal.
+                    </p>
+                    <div class="valor">R$ 4,20</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-pasta" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-pasta" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Pasta de Dente Colgate 90g" data-preco="4.20">Adicionar
+                        ao carrinho
+                    </button>
+                </div>
+                <div class="card-produto">
+                    <img src="assets/desodorante.png" alt="Desodorante Rexona 150ml">
+                    <h3>Desodorante Rexona 150ml</h3>
+                    <p class="descricao-produto">Desodorante aerosol, proteção 48h contra o suor e mau odor.</p>
+                    <div class="valor">R$ 8,90</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-desodorante" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-desodorante" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Desodorante Rexona 150ml" data-preco="8.90">Adicionar ao
+                        carrinho
+                    </button>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -79,22 +99,23 @@
         <p><strong>Telefone:</strong> (51) 4042-4042</p>
         <p><strong>WhatsApp:</strong> (51) 9898-9898</p>
         <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado: 7h às 22h | Domingo: 8h às 18h</p>
-
-        <nav>
-            <p><strong>Links Rápidos:</strong></p>
-            <ul>
+        <div class="footer-links">
+            <strong>Links Rápidos:</strong>
+            <ul class="footer-nav">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="hortifruti.html">Hortífruti</a></li>
                 <li><a href="alimentos.html">Alimentos</a></li>
                 <li><a href="higiene.html">Higiene</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
-        </nav>
-
+        </div>
         <p><small>&copy; 2025 Minimercado PUCRS. Todos os direitos reservados.</small></p>
         <p><small>Desenvolvido por: João Jacques - Projeto PUCRS</small></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
