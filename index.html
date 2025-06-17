@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimercado PUCRS - Página Principal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
 </head>
+
 
 <body>
     <!-- CABEÇALHO -->
@@ -16,103 +20,177 @@
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="hortifruti.html">Hortífruti</a></li>
                 <li><a href="alimentos.html">Alimentos</a></li>
                 <li><a href="higiene.html">Higiene</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
         </nav>
         <hr>
     </header>
 
-    <!-- CORPO PRINCIPAL -->
-    <main>
-        <section>
-            <h2>Bem-vindos ao Minimercado PUCRS</h2>
-            <p>Oferecemos produtos de qualidade com os melhores preços da região. Confira nossas categorias e serviços
-                disponíveis.</p>
-        </section>
+    <!-- Carrossel Contínuo de Produtos (itens via JS assets/script.js)-->
+    <div class="carousel-continuo-wrapper">
+        <div class="carousel-continuo" id="carousel-continuo-produtos">
+        </div>
+    </div>
+    <!-- Titulo com saudação e destaque no botão de cadastro -->
+    <section>
+        <h2>Bem-vindos ao Minimercado PUCRS</h2> <a href="cadastro.html"
+            class="btn btn-yellow btn-destaque-cadastro">Cadastro</a>
 
-        <!-- CATEGORIA: BEBIDAS -->
-        <section>
-            <h2>Bebidas</h2>
+        <p>Oferecemos produtos de qualidade com os melhores preços da região. Confira nossas categorias e serviços
+            disponíveis.</p>
+    </section>
 
-            <article>
-                <h3>Refrigerante Coca-Cola 2L</h3>
-                <img src="assets/cola.png" alt="Refrigerante Coca-Cola 2L" width="200" height="200">
-                <p><strong>Descrição:</strong> Refrigerante Coca-Cola original, garrafa de 2 litros. Produto gelado
-                    disponível.</p>
-                <p><strong>Valor:</strong> R$ 8,50</p>
-            </article>
+    <!-- CATEGORIA: HORTÍFRUTI (FRUTAS, VERDURAS E LEGUMES) -->
+    <section>
+        <h2>Hortífruti</h2>
+        <div class="produtos-grid">
+            <div class="card-produto">
+                <img src="assets/banana.png" alt="Banana Prata">
+                <h3>Banana Prata</h3>
+                <div class="valor">R$ 4,50/kg</div>
+                <div class="quantidade-group">
+                    <label for="qtd-banana" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-banana" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+            <div class="card-produto">
+                <img src="assets/alface.png" alt="Alface Crespa">
+                <h3>Alface Crespa</h3>
+                <div class="valor">R$ 2,50/unidade</div>
+                <div class="quantidade-group">
+                    <label for="qtd-alface" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-alface" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+            <div class="card-produto">
+                <img src="assets/tomate.png" alt="Tomate Italiano">
+                <h3>Tomate Italiano</h3>
+                <div class="valor">R$ 6,90/kg</div>
+                <div class="quantidade-group">
+                    <label for="qtd-tomate" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-tomate" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </section>
 
-            <article>
-                <h3>Água Mineral Crystal 500ml</h3>
-                <img src="assets/agua.png" alt="Água Mineral Crystal 500ml" width="200" height="200">
-                <p><strong>Descrição:</strong> Água mineral natural Crystal, garrafa de 500ml. Sem gás.</p>
-                <p><strong>Valor:</strong> R$ 2,00</p>
-            </article>
-        </section>
-
-        <!-- CATEGORIA: ALIMENTOS -->
-        <section>
-            <h2>Alimentos</h2>
-
-            <article>
+    <!-- CATEGORIA: ALIMENTOS -->
+    <section>
+        <h2>Alimentos</h2>
+        <div class="produtos-grid">
+            <div class="card-produto">
+                <img src="assets/arroz.png" alt="Arroz Tio João 5kg">
                 <h3>Arroz Tio João 5kg</h3>
-                <img src="assets/arroz.png" alt="Arroz Tio João 5kg" width="200" height="200">
-                <p><strong>Descrição:</strong> Arroz branco tipo 1, marca Tio João, pacote de 5kg. Grãos selecionados.
-                </p>
-                <p><strong>Valor:</strong> R$ 22,90</p>
-            </article>
-
-            <article>
+                <div class="valor">R$ 22,90</div>
+                <div class="quantidade-group">
+                    <label for="qtd-arroz" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-arroz" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+            <div class="card-produto">
+                <img src="assets/macarrao.png" alt="Macarrão Barilla Espaguete 500g">
+                <h3>Macarrão Barilla Espaguete 500g</h3>
+                <div class="valor">R$ 4,50</div>
+                <div class="quantidade-group">
+                    <label for="qtd-macarrao" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-macarrao" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+            <div class="card-produto">
+                <img src="assets/feijao.png" alt="Feijão Carioca Camil 1kg">
                 <h3>Feijão Carioca Camil 1kg</h3>
-                <img src="assets/feijao.png" alt="Feijão Carioca Camil 1kg" width="200" height="200">
-                <p><strong>Descrição:</strong> Feijão carioca tipo 1, marca Camil, pacote de 1kg. Grãos limpos e
-                    selecionados.</p>
-                <p><strong>Valor:</strong> R$ 7,80</p>
-            </article>
-        </section>
+                <div class="valor">R$ 7,80</div>
+                <div class="quantidade-group">
+                    <label for="qtd-feijao" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-feijao" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </section>
 
-        <!-- CATEGORIA: HIGIENE -->
-        <section>
-            <h2>Higiene</h2>
-
-            <article>
+    <!-- CATEGORIA: HIGIENE -->
+    <section>
+        <h2>Higiene</h2>
+        <div class="produtos-grid">
+            <div class="card-produto">
+                <img src="assets/sabonete.png" alt="Sabonete Dove 90g">
                 <h3>Sabonete Dove 90g</h3>
-                <img src="assets/sabonete.png" alt="Sabonete Dove 90g" width="200" height="200">
-                <p><strong>Descrição:</strong> Sabonete em barra Dove original, 90g. Hidratante com 1/4 de creme
-                    hidratante.</p>
-                <p><strong>Valor:</strong> R$ 3,50</p>
-            </article>
-
-            <article>
+                <div class="valor">R$ 3,50</div>
+                <div class="quantidade-group">
+                    <label for="qtd-sabonete" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-sabonete" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+            <div class="card-produto">
+                <img src="assets/shampoo.png" alt="Shampoo Seda 325ml">
                 <h3>Shampoo Seda 325ml</h3>
-                <img src="assets/shampoo.png" alt="Shampoo Seda 325ml" width="200" height="200">
-                <p><strong>Descrição:</strong> Shampoo Seda Reconstrução, 325ml. Para cabelos danificados.</p>
-                <p><strong>Valor:</strong> R$ 12,90</p>
-            </article>
-        </section>
-
-        <!-- SERVIÇOS -->
-        <section>
-            <h2>Nossos Serviços</h2>
-
-            <article>
+                <div class="valor">R$ 12,90</div>
+                <div class="quantidade-group">
+                    <label for="qtd-shampoo" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-shampoo" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+            <div class="card-produto">
+                <img src="assets/pasta.png" alt="Pasta de Dente Colgate 90g">
+                <h3>Pasta de Dente Colgate 90g</h3>
+                <div class="valor">R$ 4,20</div>
+                <div class="quantidade-group">
+                    <label for="qtd-cremeDental" class="visually-hidden">Quantidade</label>
+                    <input type="number" id="qtd-cremeDental" min="1" value="1">
+                </div>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </section>
+    <!-- SERVIÇOS -->
+    <section>
+        <h2 class="destaque-servicos">Serviços</h2>
+        <div class="servicos-grid">
+            <div class="card-servico">
+                <img src="assets/entrega.png" alt="Entrega em Domicílio" width="80" height="80">
                 <h3>Entrega em Domicílio</h3>
-                <p><strong>Descrição:</strong> Entregamos suas compras no conforto da sua casa. Atendemos em um raio de
-                    3km do estabelecimento.</p>
-                <p><strong>Valor:</strong> R$ 5,00 (pedido mínimo de R$ 30,00)</p>
-            </article>
-
-            <article>
+                <p><strong>Descrição:</strong> Adicione produtos ao carrinho e nós entregamos suas compras no
+                    conforto da sua casa.</p>
+                <a href="cadastro.html" class="btn btn-primary btn-servico">
+                    <span><strong>Valor:</strong> Gratuito</span>
+                    <span class="detalhe"></br>(pedido mínimo de R$30,00)</span>
+                </a>
+            </div>
+            <div class="card-servico">
+                <img src="assets/encomenda.png" alt="Encomendas Especiais" width="80" height="80">
                 <h3>Encomendas Especiais</h3>
                 <p><strong>Descrição:</strong> Fazemos encomendas de produtos específicos que não temos em estoque.
                     Prazo de 2 a 5 dias úteis.</p>
-                <p><strong>Valor:</strong> Sem taxa adicional (apenas o valor do produto)</p>
-            </article>
-        </section>
+                <a href="cadastro.html" class="btn btn-primary btn-servico">
+                    <span><strong>Valor:</strong> Sem taxa adicional</span>
+                    <span class="detalhe">(apenas o valor do produto)</span>
+                </a>
+            </div>
+            <div class="card-servico">
+                <img src="assets/cartao.png" alt="Cartão Fidelidade" width="80" height="80">
+                <h3>Cartão Fidelidade</h3>
+                <p><strong>Descrição:</strong> Se você é novo aqui se cadastre agora para participar do programa de
+                    fidelidade para clientes frequentes.</p>
+                <a href="cadastro.html" class="btn btn-primary btn-servico">
+                    <span><strong>Valor:</strong> Gratuito</span>
+                    <span class="detalhe"></br>(descontos e promoções exclusivas)</span>
+                </a>
+            </div>
+        </div>
+    </section>
     </main>
 
     <!-- RODAPÉ -->
@@ -123,22 +201,25 @@
         <p><strong>Telefone:</strong> (51) 4042-4042</p>
         <p><strong>WhatsApp:</strong> (51) 9898-9898</p>
         <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado: 7h às 22h | Domingo: 8h às 18h</p>
-
-        <nav>
-            <p><strong>Links Rápidos:</strong></p>
-            <ul>
+        <div class="footer-links">
+            <strong>Links Rápidos:</strong>
+            <ul class="footer-nav">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="hortifruti.html">Hortífruti</a></li>
                 <li><a href="alimentos.html">Alimentos</a></li>
                 <li><a href="higiene.html">Higiene</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
-        </nav>
-
+        </div>
         <p><small>&copy; 2025 Minimercado PUCRS. Todos os direitos reservados.</small></p>
         <p><small>Desenvolvido por: João Jacques - Projeto PUCRS</small></p>
     </footer>
+
+    <!-- Bootstrap JS e script próprio -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>

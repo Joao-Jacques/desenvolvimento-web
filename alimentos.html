@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alimentos - Minimercado PUCRS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,11 +18,12 @@
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="hortifruti.html">Hortífruti</a></li>
                 <li><a href="alimentos.html">Alimentos</a></li>
                 <li><a href="higiene.html">Higiene</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
         </nav>
         <hr>
@@ -29,46 +32,58 @@
     <!-- CORPO PRINCIPAL -->
     <main>
         <section>
-            <h2>Categoria: Alimentos</h2>
-            <p>Produtos alimentícios de qualidade para sua mesa e família.</p>
-        </section>
-
-        <section>
-            <article>
-                <h3>Arroz Tio João 5kg</h3>
-                <img src="assets/arroz.png" alt="Arroz Tio João 5kg" width="150" height="150">
-                <p><strong>Descrição:</strong> Arroz branco tipo 1, marca Tio João, pacote de 5kg. Grãos selecionados e
-                    de alta qualidade. Ideal para o dia a dia da família.</p>
-                <p><strong>Valor:</strong> R$ 22,90</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
-
-            <article>
-                <h3>Feijão Carioca Camil 1kg</h3>
-                <img src="assets/feijao.png" alt="Feijão Carioca Camil 1kg" width="150" height="150">
-                <p><strong>Descrição:</strong> Feijão carioca tipo 1, marca Camil, pacote de 1kg. Grãos limpos e
-                    selecionados. Perfeito para o tradicional arroz e feijão.</p>
-                <p><strong>Valor:</strong> R$ 7,80</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
-
-            <article>
-                <h3>Macarrão Barilla Espaguete 500g</h3>
-                <img src="assets/macarrao.png" alt="Macarrão Barilla Espaguete 500g" width="150" height="150">
-                <p><strong>Descrição:</strong> Macarrão espaguete Barilla, pacote de 500g. Massa italiana de alta
-                    qualidade.</p>
-                <p><strong>Valor:</strong> R$ 4,50</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
-
-            <article>
-                <h3>Óleo de Soja Liza 900ml</h3>
-                <img src="assets/oleo.png" alt="Óleo de Soja Liza 900ml" width="150" height="150">
-                <p><strong>Descrição:</strong> Óleo de soja refinado Liza, garrafa de 900ml. Ideal para cozinhar e
-                    fritar.</p>
-                <p><strong>Valor:</strong> R$ 5,90</p>
-                <p><strong>Disponibilidade:</strong> Em estoque</p>
-            </article>
+            <h2>Alimentos</h2>
+            <div class="produtos-grid">
+                <div class="card-produto">
+                    <img src="assets/arroz.png" alt="Arroz Tio João 5kg">
+                    <h3>Arroz Tio João 5kg</h3>
+                    <p class="descricao-produto">Arroz branco tipo 1, grãos selecionados, ideal para o dia a dia.</p>
+                    <div class="valor">R$ 22,90</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-arroz" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-arroz" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Arroz Tio João 5kg" data-preco="22.90">Adicionar ao
+                        carrinho</button>
+                </div>
+                <div class="card-produto">
+                    <img src="assets/feijao.png" alt="Feijão Carioca Camil 1kg">
+                    <h3>Feijão Carioca Camil 1kg</h3>
+                    <p class="descricao-produto">Feijão carioca tipo 1, grãos limpos e selecionados, sabor e qualidade.
+                    </p>
+                    <div class="valor">R$ 7,80</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-feijao" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-feijao" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Feijão Carioca Camil 1kg" data-preco="7.80">Adicionar ao
+                        carrinho</button>
+                </div>
+                <div class="card-produto">
+                    <img src="assets/macarrao.png" alt="Macarrão Barilla Espaguete 500g">
+                    <h3>Macarrão Barilla Espaguete 500g</h3>
+                    <p class="descricao-produto">Massa italiana de alta qualidade, cozimento rápido e saboroso.</p>
+                    <div class="valor">R$ 4,50</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-macarrao" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-macarrao" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Macarrão Barilla Espaguete 500g"
+                        data-preco="4.50">Adicionar ao carrinho</button>
+                </div>
+                <div class="card-produto">
+                    <img src="assets/oleo.png" alt="Óleo de Soja Liza 900ml">
+                    <h3>Óleo de Soja Liza 900ml</h3>
+                    <p class="descricao-produto">Óleo de soja refinado, ideal para cozinhar e fritar alimentos.</p>
+                    <div class="valor">R$ 5,90</div>
+                    <div class="quantidade-group">
+                        <label for="qtd-oleo" class="visually-hidden">Quantidade</label>
+                        <input type="number" id="qtd-oleo" min="1" value="1">
+                    </div>
+                    <button class="btn-carrinho" data-produto="Óleo de Soja Liza 900ml" data-preco="5.90">Adicionar ao
+                        carrinho</button>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -80,22 +95,23 @@
         <p><strong>Telefone:</strong> (51) 4042-4042</p>
         <p><strong>WhatsApp:</strong> (51) 9898-9898</p>
         <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado: 7h às 22h | Domingo: 8h às 18h</p>
-
-        <nav>
-            <p><strong>Links Rápidos:</strong></p>
-            <ul>
+        <div class="footer-links">
+            <strong>Links Rápidos:</strong>
+            <ul class="footer-nav">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="hortifruti.html">Hortífruti</a></li>
                 <li><a href="alimentos.html">Alimentos</a></li>
                 <li><a href="higiene.html">Higiene</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
-        </nav>
-
+        </div>
         <p><small>&copy; 2025 Minimercado PUCRS. Todos os direitos reservados.</small></p>
         <p><small>Desenvolvido por: João Jacques - Projeto PUCRS</small></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>

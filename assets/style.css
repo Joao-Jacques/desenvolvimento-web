@@ -1,0 +1,321 @@
+/* ==========================
+   Variáveis Globais
+   ========================== */
+:root {
+  --primary-blue: #00509e;
+  --primary-yellow: #ffd500;
+  --gray: #e0e0e0;
+  --white: #fff;
+  --shadow: 0 2px 12px rgba(0,80,158,0.06);
+  --radius: 12px;
+  --transition: 0.2s;
+}
+
+/* ==========================
+   Layout Geral (Body, Header, Footer)
+   ========================== */
+body {
+  background: #f8f9fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding-bottom: 40px;
+}
+header, footer {
+  background: var(--primary-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 24px 0 12px 0;
+}
+footer {
+  margin-top: 40px;
+}
+hr { border-color: var(--primary-yellow); }
+
+/* ==========================
+   Navegação (Menu e Footer)
+   ========================== */
+header nav ul, .footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+header nav ul li a, .footer-nav li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+}
+header nav ul li a:hover, .footer-nav li a:hover {
+  color: var(--primary-yellow);
+  background: var(--primary-yellow);
+  color: var(--primary-blue);
+}
+
+/* ==========================
+   Seções e Títulos
+   ========================== */
+section {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+}
+section h2, .card-servico h3, .card-produto h3 {
+  color: var(--primary-blue);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+section h2 { font-size: 2rem; margin-bottom: 1.2rem; }
+.destaque-servicos {
+  background: var(--primary-blue);
+  color: #fff;
+  display: inline-block;
+  padding: 0.4rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,80,158,0.10);
+  letter-spacing: 1px;
+}
+
+/* ==========================
+   Cards de Produtos e Serviços
+   ========================== */
+.card, .card-produto, .card-servico {
+  border: 2px solid var(--gray);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,80,158,0.10);
+  background: #fff;
+  padding: 1.5rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.card:hover, .card-produto:hover, .card-servico:hover {
+  box-shadow: 0 8px 32px rgba(0,80,158,0.18);
+  border-color: var(--primary-blue);
+}
+.card img, .card-produto img, .card-servico img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f8f9fa;
+}
+.card-servico {
+  border-color: var(--primary-yellow);
+  min-width: 260px;
+  max-width: 400px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+.card-servico .detalhe, .btn-servico .detalhe {
+  color: var(--primary-yellow);
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+.card-produto .valor, .card-servico .valor-servico {
+  color: #fff;
+  background: var(--primary-blue);
+  font-size: 1.15rem;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.3rem 1.1rem;
+  margin: 0.7rem 0 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,80,158,0.10);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.card-produto h3,
+.card-servico h3 {
+  text-align: center;
+  width: 100%;
+}
+
+/* ==========================
+   Grids de Produtos e Serviços
+   ========================== */
+.produtos-grid, .servicos-grid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.produtos-grid { grid-template-columns: repeat(3, 1fr); }
+.servicos-grid { grid-template-columns: repeat(3, 1fr); margin-top: 1.5rem; }
+
+/* ==========================
+   Botões (Geral, Carrinho, Serviços)
+   ========================== */
+.btn, .btn-carrinho, .btn-servico, .btn-remover-carrinho {
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,80,158,0.10);
+  transition: background var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+  padding: 0.5rem 1.2rem;
+}
+.btn-primary, .btn-carrinho, .btn-servico {
+  background: var(--primary-blue);
+  color: var(--white);
+}
+.btn-primary:hover, .btn-carrinho:hover, .btn-servico:hover {
+  background: #00396b;
+  box-shadow: 0 4px 16px rgba(0,80,158,0.18);
+}
+.btn-yellow, .btn-remover-carrinho {
+  background: var(--primary-yellow);
+  color: var(--primary-blue);
+  border-radius: 6px;
+  padding: 0.3rem 0.9rem;
+}
+.btn-yellow:hover, .btn-remover-carrinho:hover {
+  background: #ffb800;
+  color: #00396b;
+}
+
+/* Botão de destaque para Cadastro */
+.btn-destaque-cadastro {
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffd500 80%, #fffbe0 100%);
+  color: #00509e;
+  border: 2px solid #ffd500;
+  box-shadow: 0 4px 18px rgba(255,213,0,0.18);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn-destaque-cadastro:hover {
+  background: #ffb800;
+  color: #00396b;
+  box-shadow: 0 6px 24px rgba(255,213,0,0.28);
+}
+
+/* ==========================
+   Inputs de Quantidade
+   ========================== */
+.quantidade-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+input[type="number"] {
+  width: 60px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+}
+
+/* ==========================
+   Carrossel de Produtos
+   ========================== */
+.carousel-continuo-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 16px 0;
+  margin-bottom: 2rem;
+}
+@keyframes scroll-continuo {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.carousel-continuo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  animation: scroll-continuo 20s linear infinite;
+  will-change: transform;
+}
+.carousel-continuo .item-produto {
+  border: 2px solid var(--gray);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  padding: 12px 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  height: 220px;
+  min-width: 180px;
+  max-width: 180px;
+  box-sizing: border-box;
+  transition: box-shadow var(--transition), border-color var(--transition);
+  justify-content: flex-start;
+}
+.carousel-continuo .item-produto:hover {
+  box-shadow: 0 8px 24px rgba(0,80,158,0.15);
+  border-color: var(--primary-blue);
+}
+.carousel-continuo .item-produto img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+.carousel-item img {
+  object-fit: cover;
+  height: 350px;
+}
+
+/* ==========================
+   Tabela do Carrinho
+   ========================== */
+.tabela-carrinho {
+  width: 100%;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+.tabela-carrinho th, .tabela-carrinho td {
+  padding: 1rem 0.7rem;
+  text-align: left;
+  vertical-align: middle;
+}
+.tabela-carrinho th {
+  background: var(--primary-blue);
+  color: var(--white);
+  font-weight: 600;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  letter-spacing: 1px;
+}
+.tabela-carrinho tr:not(:last-child) td {
+  border-bottom: 1px solid var(--gray);
+}
+.tabela-carrinho td.valor {
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ==========================
+   Responsividade
+   ========================== */
+@media (max-width: 900px) {
+  section { padding: 1.2rem 0.5rem 1rem 0.5rem; }
+  .produtos-grid, .servicos-grid { grid-template-columns: 1fr; }
+  .card-servico { width: 100%; max-width: 500px; }
+}
+@media (max-width: 600px) {
+  header nav ul { flex-direction: column; gap: 0.5rem; }
+  .tabela-carrinho th, .tabela-carrinho td { padding: 0.6rem 0.3rem; font-size: 0.98rem; }
+}
