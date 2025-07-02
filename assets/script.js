@@ -282,4 +282,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Atualiza ao carregar e sempre que o carrinho mudar
     atualizarEntregaDisponivel();
+
+    // Exibe/oculta campo de endereço conforme tipo de serviço e controla valor mínimo para entrega
+    const tipoServicoSelect = document.getElementById('tipoServico');
+    const enderecoContainer = document.getElementById('enderecoContainer');
+    const enderecoInput = document.getElementById('enderecoEntrega');
+    const mensagemPedido = document.getElementById('mensagemPedido');
+    if (tipoServicoSelect && enderecoContainer && enderecoInput) {
+        tipoServicoSelect.addEventListener('change', function () {
+            if (this.value === 'tele-entrega') {
+                // Verifica valor mínimo
+                const total = calcularTotalCarrinho();
+                if (total < 30) {
+                    enderecoContainer.style.display = 'none';
+                    enderecoInput.required = false;
+                    enderecoInput.value = '';
+                    if (mensagemPedido) {
+                        mensagemPedido.innerHTML = '<div class="alert alert-danger" role="alert">Para receber em casa, o valor mínimo do pedido deve ser R$ 30,00.</div>';
+                    }
+                    tipoServicoSelect.value = '';
+                } else {
+                    enderecoContainer.style.display = '';
+                    enderecoInput.required = true;
+                    if (mensagemPedido) mensagemPedido.innerHTML = '';
+                }
+            } else {
+                enderecoContainer.style.display = 'none';
+                enderecoInput.required = false;
+                enderecoInput.value = '';
+                if (mensagemPedido) mensagemPedido.innerHTML = '';
+            }
+        });
+    }
+
+    // Lógica para finalizar pedido com mensagem na página e checagem de valor mínimo para entrega
+    const formFinalizar = document.getElementById('formFinalizarPedido');
+    if (formFinalizar) {
+        formFinalizar.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const tipoServico = tipoServicoSelect ? tipoServicoSelect.value : '';
+            const total = calcularTotalCarrinho();
+            if (tipoServico === 'tele-entrega' && total < 30) {
+                if (mensagemPedido) {
+                    mensagemPedido.innerHTML = '<div class="alert alert-danger" role="alert">Para receber em casa, o valor mínimo do pedido deve ser R$ 30,00.</div>';
+                }
+                tipoServicoSelect.value = '';
+                enderecoContainer.style.display = 'none';
+                enderecoInput.required = false;
+                enderecoInput.value = '';
+                return;
+            }
+            if (formFinalizar.checkValidity()) {
+                if (mensagemPedido) {
+                    mensagemPedido.innerHTML = '<div class="alert alert-success" role="alert">Pedido realizado com sucesso! Obrigado por comprar conosco.</div>';
+                }
+                formFinalizar.reset();
+                // Limpa o carrinho após finalizar
+                setCarrinho([]);
+                atualizarCarrinhoTabela();
+                document.getElementById('total-carrinho').textContent = '';
+                if (enderecoContainer) enderecoContainer.style.display = 'none';
+            } else {
+                formFinalizar.classList.add('was-validated');
+            }
+        });
+    }
 });

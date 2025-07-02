@@ -49,31 +49,41 @@
             </div>
             <!-- Exibe o valor total do carrinho -->
             <div id="total-carrinho" style="font-weight:bold;margin-top:1rem;"></div>
-            <div class="mt-3"> <!-- Escolha do tipo de entrega -->
-                <label><input type="radio" name="tipo-entrega" value="retirada" checked> Retirada no local</label>
-                <label class="ms-3">
-                    <input type="radio" name="tipo-entrega" value="entrega" id="radio-entrega"> Receber em casa
-                    <span id="aviso-entrega" style="color:#b00;display:none;font-size:0.95em;">(Pedido mínimo R$ 30,00)
-                    </span>
-                    <!-- Aviso exibido se o pedido não atingir o valor mínimo -->
-                </label>
-            </div>
-            <!-- Campo de seleção de data de entrega/retirada -->
-            <div class="mt-3" id="data-entrega-container">
-                <label for="data-entrega"><strong>Escolha a data de retirada/entrega:</strong></label>
-                <input type="date" id="data-entrega" name="data-entrega" class="form-control" style="max-width:200px;">
-            </div>
-            <!-- Escolha do método de pagamento -->
-            <div class="mt-4">
-                <strong>Método de Pagamento:</strong>
-                <div class="mt-2">
-                    <label><input type="radio" name="pagamento" value="cartao" checked> Cartão</label>
-                    <label class="ms-3"><input type="radio" name="pagamento" value="pix"> Pix</label>
+            <form id="formFinalizarPedido" class="row g-3 needs-validation mt-3" novalidate>
+                <div class="col-md-6">
+                    <label for="tipoServico" class="form-label">Tipo de Serviço</label>
+                    <select class="form-select" id="tipoServico" name="tipoServico" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="retirada">Retirada no local</option>
+                        <option value="tele-entrega">Tele-entrega</option>
+                    </select>
                 </div>
-            </div>
-            <div class="mt-4">
-                <button type="button" class="btn btn-success px-5 py-2 btn-finalizar-pedido">Finalizar Pedido</button>
-            </div>
+                <div class="col-md-3">
+                    <label for="dataAgendamento" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="horaAgendamento" class="form-label">Horário</label>
+                    <input type="time" class="form-control" id="horaAgendamento" name="horaAgendamento" required>
+                </div>
+                <div class="col-md-12" id="enderecoContainer" style="display:none;">
+                    <label for="enderecoEntrega" class="form-label">Endereço para Entrega</label>
+                    <input type="text" class="form-control" id="enderecoEntrega" name="enderecoEntrega"
+                        placeholder="Rua, número, bairro" autocomplete="street-address">
+                </div>
+                <div class="col-12 mt-4">
+                    <strong>Método de Pagamento:</strong>
+                    <div class="mt-2">
+                        <label><input type="radio" name="pagamento" value="cartao" required> Cartão</label>
+                        <label class="ms-3"><input type="radio" name="pagamento" value="pix" required> Pix</label>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-4">
+                    <button type="submit" class="btn btn-success px-5 py-2 btn-finalizar-pedido"
+                        style="font-size:1.15rem;font-weight:600;">Finalizar Pedido</button>
+                </div>
+            </form>
+            <div id="mensagemPedido" class="mt-3"></div>
         </section>
     </main>
 
